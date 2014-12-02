@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: 315373c1afa873d4999ac63e175a71b9
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: text
+    21300002: text_A
+    21300004: text_N
+    21300006: text_U
+    21300008: text_3
+    21300010: text_W
+    21300012: text_5
+    21300014: text_T
+    21300016: text_I
+    21300018: text_L
+    21300020: text_E
+    21300022: text_R
+    21300024: text_S
+    21300026: text_12
+    21300028: text_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: text_A
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 155
+        width: 87
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_N
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 155
+        width: 75
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_U
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 154
+        width: 75
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_W
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 155
+        width: 129
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_T
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 28
+        width: 73
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_I
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 27
+        width: 14
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_L
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 27
+        width: 54
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_E
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 26
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_R
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 27
+        width: 69
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_S
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 26
+        width: 60
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_12
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 26
+        width: 78
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: text_13
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 146
+        width: 26
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
