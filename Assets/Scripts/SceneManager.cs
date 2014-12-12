@@ -27,6 +27,7 @@ public class SceneManager : MonoBehaviour
 		_successText = GameObject.Find("SuccessText");
 		_successText.SetActive(false);
 		_pauseDialog = GameObject.Find("PauseDialog");
+		_pauseDialog.SetActive(false);
 		_isPause = false;
 	}
 
@@ -63,6 +64,7 @@ public class SceneManager : MonoBehaviour
 	public void Finish()
 	{
 		StartCoroutine(FinishAnimation());
+		Record.AddScore(Score.instance.angle);
 	}
 
 	/// <summary>
@@ -92,8 +94,9 @@ public class SceneManager : MonoBehaviour
 	{
 		if (!_isPause && Input.GetKeyDown(KeyCode.Escape))
 		{
-			Application.LoadLevel("Title");
+//			Application.LoadLevel("Title");
 //			Application.LoadLevel(Application.loadedLevel);
+			Pause();
 		}
 	}
 
@@ -104,6 +107,14 @@ public class SceneManager : MonoBehaviour
 	{
 		_isPause = true;
 		_rot.enabled = false;
+		_pauseDialog.SetActive(true);
+	}
+
+	public void Resume()
+	{
+		_isPause = false;
+		_rot.enabled = true;
+		_pauseDialog.SetActive(false);
 	}
 
 }

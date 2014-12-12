@@ -6,6 +6,15 @@ public class Rot : MonoBehaviour
 {
 	public const int StaticBlock = 5;
 
+	public enum BlockColor
+	{
+		None,
+		Green,
+		Pink,
+		Blue,
+		Static = 5
+	}
+
 	public enum Rule
 	{
 		Fixed,
@@ -108,11 +117,11 @@ public class Rot : MonoBehaviour
 
 		if (rule == Rule.Fixed)
 		{
-			fixedBlock = clockwise ? 1 : 2;
+			fixedBlock = clockwise ? (int)BlockColor.Green : (int)BlockColor.Pink;
 		}
 		else if (rule == Rule.Switch)
 		{
-			fixedBlock = (_turn & 1) == 0 ? 1 : 2;
+			fixedBlock = (_turn & 1) == 0 ? (int)BlockColor.Green : (int)BlockColor.Pink;
 		}
 
 		if (clockwise)
@@ -245,7 +254,7 @@ public class Rot : MonoBehaviour
 	/// </summary>
 	void RotTableLeft()
 	{
-//		// y = x 軸の鏡映変換
+		// y = x 軸の鏡映変換
 //		Swap(ref table[0, 1], ref table[1, 0]);
 //		Swap(ref table[0, 2], ref table[2, 0]);
 //		Swap(ref table[1, 2], ref table[2, 1]);
@@ -339,9 +348,9 @@ public class Rot : MonoBehaviour
 	{
 		bool check = false;
 
-		for (int i = table.GetLength(0) - 1; i >= 0; i--)
+		for (int i = rows - 1; i >= 0; i--)
 		{
-			for (int j = 0; j < table.GetLength(1); j++)
+			for (int j = 0; j < cols; j++)
 			{
 				int k = table[i, j];
 				if (k > 0)
@@ -364,7 +373,6 @@ public class Rot : MonoBehaviour
 							t.type = StaticBlock;
 							r--;
 						}
-						Debug.Log("OK");
 						check = true;
 						continue;
 					}
@@ -379,7 +387,6 @@ public class Rot : MonoBehaviour
 							t.type = StaticBlock;
 							d--;
 						}
-						Debug.Log("OK");
 						check = true;
 					}
 				}

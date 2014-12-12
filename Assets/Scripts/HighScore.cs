@@ -19,8 +19,6 @@ public class HighScore : MonoBehaviour
 		}
 	}
 
-
-
 	void Awake()
 	{
 		text.gameObject.SetActive(false);
@@ -32,7 +30,15 @@ public class HighScore : MonoBehaviour
 		if (Record.score.ContainsKey(level))
 		{
 			int angle = Record.score[level];
-			text.text = angle.ToString();
+			const int max = 99999;
+			if (angle < max)
+			{
+				text.text = angle.ToString() + " °";
+			}
+			else
+			{
+				text.text = max.ToString() + " °+";
+			}
 		}
 		else
 		{

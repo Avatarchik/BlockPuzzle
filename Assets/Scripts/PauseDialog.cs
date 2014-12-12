@@ -14,6 +14,12 @@ public class PauseDialog : MonoBehaviour
 	IEnumerator _fadeOut;
 
 	bool _fading = false;
+	int _layerMask = 0;
+
+	void Awake()
+	{
+		_layerMask = 1 << LayerMask.NameToLayer("UI");
+	}
 
 	void Start()
 	{
@@ -58,6 +64,7 @@ public class PauseDialog : MonoBehaviour
 
 		_fading = false;
 		gameObject.SetActive(false);
+		SceneManager.instance.Resume();
 	}
 	
 	void Update()
@@ -68,15 +75,29 @@ public class PauseDialog : MonoBehaviour
 			{
 				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 				RaycastHit hit;
-				if (Physics.Raycast(ray, out hit))
+				if (Physics.Raycast(ray, out hit, 100.0f, _layerMask))
 				{
-					Debug.Log(hit.collider.name);
+					if (hit.collider.tag == "Reset")
+					{
+						Application.LoadLevel(Application.loadedLevel);
+					}
+					else if (hit.collider.tag == "Title")
+					{
+						Application.LoadLevel("Title");
+					}
 				}
 				else
 				{
 					StartCoroutine(FadeIn(0.5f));
+					GetComponent<Animator>().SetTrigger("Hide");
 				}
 			}
+		}
+
+		if (!_fading && Input.GetKeyDown(KeyCode.Escape))
+		{
+			StartCoroutine(FadeIn(0.5f));
+			GetComponent<Animator>().SetTrigger("Hide");
 		}
 	}
 }
