@@ -3,12 +3,11 @@ using System.Collections;
 
 public class PauseDialog : MonoBehaviour
 {
-	public Color fadeColor0Begin;
-	public Color fadeColor0End;
-	public Color fadeColor1Begin;
 	public Color fadeColor1End;
-
-	public Material material;
+	public Color fadeColor2End;
+	
+	Color _fadeColor1Begin;
+	Color _fadeColor2Begin;
 
 	IEnumerator _fadeIn;
 	IEnumerator _fadeOut;
@@ -16,12 +15,17 @@ public class PauseDialog : MonoBehaviour
 	bool _fading = false;
 	int _layerMask = 0;
 
+	RadialGrad _radialGrad;
+
 	void Awake()
 	{
 		_layerMask = 1 << LayerMask.NameToLayer("UI");
+		_radialGrad = GameObject.FindObjectOfType<RadialGrad>();
+		_fadeColor1Begin = _radialGrad.color1;
+		_fadeColor2Begin = _radialGrad.color2;
 	}
 
-	void Start()
+	void OnEnable()
 	{
 		_fadeIn = Fade(0.5f);
 		StartCoroutine(_fadeIn);
@@ -36,10 +40,10 @@ public class PauseDialog : MonoBehaviour
 		{
 			elapsed += Time.deltaTime;
 			float t = elapsed / d;
-			Color color0 = Color.Lerp(fadeColor0Begin, fadeColor0End, t);
-			Color color1 = Color.Lerp(fadeColor1Begin, fadeColor1End, t);
-			material.SetColor("_Color1", color0);
-			material.SetColor("_Color2", color1);
+			Color color1 = Color.Lerp(_fadeColor1Begin, fadeColor1End, t);
+			Color color2 = Color.Lerp(_fadeColor2Begin, fadeColor2End, t);
+			_radialGrad.color1 = color1;
+			_radialGrad.color2 = color2;
 			yield return null;
 		}
 
@@ -55,16 +59,19 @@ public class PauseDialog : MonoBehaviour
 		{
 			elapsed += Time.deltaTime;
 			float t = elapsed / d;
-			Color color0 = Color.Lerp(fadeColor0End, fadeColor0Begin, t);
-			Color color1 = Color.Lerp(fadeColor1End, fadeColor1Begin, t);
-			material.SetColor("_Color1", color0);
-			material.SetColor("_Color2", color1);
+			Color color1 = Color.Lerp(fadeColor1End, _fadeColor1Begin, t);
+			Color color2 = Color.Lerp(fadeColor2End, _fadeColor2Begin, t);
+			_radialGrad.color1 = color1;
+			_radialGrad.color2 = color2;
 			yield return null;
 		}
 
 		_fading = false;
 		gameObject.SetActive(false);
-		SceneManager.instance.Resume();
+		if (SceneManager.instance != null)
+		{
+			SceneManager.instance.Resume();
+		}
 	}
 	
 	void Update()

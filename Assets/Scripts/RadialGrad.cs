@@ -16,7 +16,7 @@ public class RadialGrad : MonoBehaviour
 		_color2Id = Shader.PropertyToID("_Color2");
 	}
 
-	void OnPostRender()
+	void OnPreRender()
 	{
 		material.SetColor(_color1Id, color1);
 		material.SetColor(_color2Id, color2);

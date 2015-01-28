@@ -24,7 +24,7 @@ public class SceneManager : MonoBehaviour
 
 	void Awake()
 	{
-		_successText = GameObject.Find("SuccessText");
+		_successText = GameObject.Find("Success");
 		_successText.SetActive(false);
 		_pauseDialog = GameObject.Find("PauseDialog");
 		_pauseDialog.SetActive(false);
