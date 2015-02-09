@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 13648a6bf9c8f0e4199d8730a62d49ea, type: 2}
   color1: {r: 1, g: 1, b: 1, a: 0}
-  color2: {r: .489411771, g: .558413923, b: .600000024, a: .270588249}
+  color2: {r: .489411771, g: .558413923, b: .600000024, a: .313725501}
 --- !u!20 &420550523
 Camera:
   m_ObjectHideFlags: 0
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 774581007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 105d5040f2a75644bb34b94e6cc07b8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 07cebced11324aa43ad7cdb1089fb98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 682772487}
