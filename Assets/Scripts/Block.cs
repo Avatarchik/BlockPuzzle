@@ -90,7 +90,7 @@ public class Block : MonoBehaviour
 			_transform.localScale = Vector3.Lerp(start, Vector3.zero, t);
 			yield return null;
 		}
-		renderer.material = SystemResource.instance.materials[0];
+		GetComponent<Renderer>().material = SystemResource.instance.materials[0];
 		for (int i = 1; i <= n; i++)
 		{
 			float t = (float)i / n;

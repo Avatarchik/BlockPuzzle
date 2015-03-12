@@ -22,7 +22,7 @@ public class SystemResource : MonoBehaviour
 	{
 		if (!mute)
 		{
-			audio.PlayOneShot(se[0]);
+			GetComponent<AudioSource>().PlayOneShot(se[0]);
 		}
 	}
 

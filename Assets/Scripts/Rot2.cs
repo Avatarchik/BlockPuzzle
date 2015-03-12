@@ -25,7 +25,7 @@ public class Rot2 : MonoBehaviour
 		{
 			foreach (var g in blocks)
 			{
-				g.rigidbody2D.gravityScale = 0;
+				g.GetComponent<Rigidbody2D>().gravityScale = 0;
 			}
 			StartCoroutine(Rotate(false));
 		}
@@ -33,7 +33,7 @@ public class Rot2 : MonoBehaviour
 		{
 			foreach (var g in blocks)
 			{
-				g.rigidbody2D.gravityScale = 0;
+				g.GetComponent<Rigidbody2D>().gravityScale = 0;
 			}
 			StartCoroutine(Rotate(true));
 		}
@@ -59,7 +59,7 @@ public class Rot2 : MonoBehaviour
 
 		foreach (var g in blocks)
 		{
-			g.rigidbody2D.gravityScale = 1.0f;
+			g.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
 		}
 	}
 }
