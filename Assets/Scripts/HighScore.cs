@@ -42,7 +42,7 @@ public class HighScore : MonoBehaviour
 		}
 		else
 		{
-			text.text = "-";
+			text.text = "";
 		}
 	}
 
