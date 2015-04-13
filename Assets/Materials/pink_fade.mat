@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pink
-  m_Shader: {fileID: 4800000, guid: 6e6ed4fe265480c4288bf8ebe8ad7bda, type: 3}
+  m_Name: pink_fade
+  m_Shader: {fileID: 4800000, guid: e40dea57c01996744bdf3252ba2c4469, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
