@@ -17,12 +17,15 @@ public class PauseDialog : MonoBehaviour
 
 	RadialGrad _radialGrad;
 
+	Animator _animator;
+
 	void Awake()
 	{
 		_layerMask = 1 << LayerMask.NameToLayer("UI");
 		_radialGrad = GameObject.FindObjectOfType<RadialGrad>();
 		_fadeColor1Begin = _radialGrad.color1;
 		_fadeColor2Begin = _radialGrad.color2;
+		_animator = GetComponent<Animator>();
 	}
 
 	void OnEnable()
@@ -90,7 +93,8 @@ public class PauseDialog : MonoBehaviour
 					}
 					else if (hit.collider.tag == "Title")
 					{
-						Application.LoadLevel("Title");
+//						Application.LoadLevel("Title");
+						_animator.SetTrigger("Title");
 					}
 				}
 				else
