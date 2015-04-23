@@ -89,7 +89,8 @@ public class PauseDialog : MonoBehaviour
 				{
 					if (hit.collider.tag == "Reset")
 					{
-						Application.LoadLevel(Application.loadedLevel);
+//						Application.LoadLevel(Application.loadedLevel);
+						_animator.SetTrigger("Reset");
 					}
 					else if (hit.collider.tag == "Title")
 					{
